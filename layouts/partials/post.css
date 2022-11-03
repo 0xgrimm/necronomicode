@@ -1,0 +1,67 @@
+<style>
+.article_text h2{
+  font-size: 1.953rem;
+}
+
+.article_text h3{
+  font-size: 1.563rem;
+}
+
+.article_text h4{
+  font-size: 1.25rem;
+}
+
+.article_text > *{
+  margin-bottom: 1rem;
+}
+
+.highlight{
+  font-size: 0.64rem;
+}
+
+.article_text a:hover{
+  text-decoration: none;
+}
+
+.article_text:last-child {
+  margin-bottom: 0;
+}
+
+.article_text h2,
+.article_text h3,
+.article_text h4{
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.article_text ul,
+.article_text ol{
+  list-style: inside;
+}
+
+.article_text img{
+  width: 100%;
+  height: auto;
+}
+
+.highlight pre{
+  overflow: auto;
+  padding: 1em 0;
+}
+
+.highlight code >span::before,
+.highlight code >span::after{
+  content: "\0020";
+}
+
+.shell code > span::before{
+  content: "\0020$\0020";
+}
+
+.article_text p code{
+  font-size: 0.64rem;
+  padding: 0.1rem 0.2rem;
+  color: #f92672;
+  background-color: #272822;
+}
+</style>

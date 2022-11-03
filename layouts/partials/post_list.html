@@ -1,0 +1,38 @@
+{{ range (.Paginate ((.Site.GetPage "section" "posts").Pages)).Pages }}
+  <article style="color: var(--white-color); margin-bottom: 1.5em; text-align: center;">
+    <h2 style="font-weight: 700;">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+    <div class="data" style="color: var(--primary-color); margin-bottom: 0.5em; font-weight: 300; font-size: .75em;">
+      <span>Fecha: {{ .Date.Format "January 2, 2006"}}</span>
+      <span class="separator" style="">&nbsp;Categoría:
+        {{ range (.GetTerms "categories") }}
+          <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        {{ end }}
+      </span>
+    </div>
+    <div class="summary" style="font-size: 1rem; font-family:'Roboto',sans-serif; text-align: left;">
+      {{.Summary}}
+    </div>
+    <div class="article_button" style="border: none; border-radius: 8px; transition: all 300ms; font-size: 1em; display: inline-block;">
+      <a href="{{ .Permalink }}" style="color: var(--secondary-color); padding: 0.5em 2em; display: block;">
+        Leer artículo
+      </a>
+    </div>
+  </article>
+
+{{ end }}
+
+<ul class="pager" style="font-weight: 700; list-style: none; display: flex; justify-content: space-between; margin-bottom: 1em;">
+  <li class="next">
+    {{ if .Paginator.HasPrev }}
+      <a href="{{ .Paginator.Prev.URL }}">&larr; Artículos más recientes</a>
+    {{ end }}
+  </li>
+
+  <li class="previous">
+    {{ if .Paginator.HasNext }}
+      <a href="{{ .Paginator.Next.URL }}">Artículos más antiguos &rarr;</a>
+    {{ end }}
+  </li>
+ </ul>
